@@ -4,10 +4,56 @@
 	<title>Cinephiles</title>
 	<link rel="icon" type="image/ico" href="logo.png" />
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device=width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.scroller{
+			display: flex;
+			flex-wrap: nowrap;
+			overflow-x: auto;
+		}
+		.mem{
+			flex: 0 0 auto;
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
+		.memoverlay{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			overflow: hidden;
+			background-color: rgba(0,0,0,0);
+			width: 100%;
+			height: 100%;
+			transition: 0.5s ease;
+			border-radius: 50%;
+		}
+		.memimg{
+			position: relative;
+		}
+		.memimg:hover .memoverlay{
+			background-color: rgba(0,0,0,0.7);
+		}
+		.memimg:hover .memname{
+			opacity: 1;
+			font-size: 20px;
+		}
+		.memname{
+			color: white;
+			top: 50%;
+			left: 50%;
+			position: absolute;
+			transform: translate(-50%, -50%);
+			text-align: center;
+			opacity: 0;
+			transition: 0.5s ease;
+			font-size: 15px;
+		}
+
+	</style>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 	<nav class="navbar navbar-inverse navbar-fixed-top" style="opacity: 0.9">
@@ -27,8 +73,8 @@
 					<li><a href="#about">Home</a></li>
 					<li><a href="#filmography">Short Films</a></li>
 					<li><a href="#">Events</a></li>
-					<li><a href="#">Members</a></li>
-					<li><a href="#">Contact</a></li>
+					<li><a href="#members">Members</a></li>
+					<li><a href="#contact">Contact</a></li>
 				</ul>	
 			</div>
 		</div>
@@ -70,12 +116,21 @@
 		<img class="img-responsive" src="logo.png" style="width: 100px; margin-left: auto; margin-right: auto;">
 		<h3>THE CINEPHILES</h3>
 		<p><em>the movie making club of IIT Indore</em></p>
-		<p>We, at The Cinephiles, make short films and work on various other video related projects. All of us are ultimate movie freaks with passion towards various fields of movie making. Here, we enjoy the art of film making along with mastering the pillars of film making which includes direction, editing, script writing, sound mixing among others. Being a club of IIT Indore, we also aim to take the institute to new heights by showing our best ability in competitions like IITvsIIM and Inter-IIT any many others.
+		<p>We, at The Cinephiles, make short films and work on various other video related projects. All of us are ultimate movie freaks with passion towards various fields of movie making. Here, we enjoy the art of film making along with mastering the pillars of film making which includes direction, editing, script writing, sound mixing among others. Being a club of IIT Indore, we also aim to take the institute to new heights by showing our best ability in competitions like IITvsIIM and Inter-IIT and many others.
 	</div>
 
 	<div class="container-fluid" style="background-color: #2c2c2c; color: white; padding: 50px;" id="filmography">
 		<div class="text-center"><h3>Our Filmography<br></h3></div>
 		<div class="row">
+			<div class="col-md-3 col-xs-6">
+				<p><strong>Glimpses of 2k17</strong></p><br>
+				<a href="#img7" data-toggle="collapse"><img class="img-responsive" src="titles\Glimpses.jpg"></a>
+				<div id="img7" class="collapse">
+					<p>Release date: 26 June, 2018</p>
+					<p style="color: green;"><strong><a href="https://www.youtube.com/watch?v=8-PiTPPOPPs">Watch Here</a></strong>
+					</p>
+				</div>
+			</div>
 			<div class="col-md-3 col-xs-6">
 				<p><strong>Parcel Pyaar Ka</strong></p><br>
 				<a href="#img1" data-toggle="collapse">
@@ -142,8 +197,106 @@
 			</div>
 		</div>
 	</div>
+	<div class="container-fluid" id="members">
+		<div class="text-center"><h3>Club Members<br></h3></div>
+		<div class="scroller row">
+			<div class="mem col-xs-3 col-md-2"><div class="memimg"><img class="img-responsive" src="members/devashish.jpg" style="border-radius: 50%;">
+				<div class="memoverlay"><div class="memname">Devashish Shukla</div></div></div>
+			</div>
+			<div class="mem col-xs-3 col-md-2"><div class="memimg"><img class="img-responsive" src="members/sandarbh.jpg" style="border-radius: 50%;">
+				<div class="memoverlay"><div class="memname">Sandarbh Sahu</div></div></div></div>
+			<div class="mem col-xs-3 col-md-2"><div class="memimg"><img class="img-responsive" src="members/ashwini.jpg" style="border-radius: 50%;">
+				<div class="memoverlay"><div class="memname">Ashwini<br>Jha</div></div></div></div>
+			<div class="mem col-xs-3 col-md-2"><div class="memimg"><img class="img-responsive" src="members/adityagupta.jpg" style="border-radius: 50%;">
+				<div class="memoverlay"><div class="memname">Aditya Gupta</div></div></div></div>
+			<div class="mem col-xs-3 col-md-2"><div class="memimg"><img class="img-responsive" src="members/prayag.jpg" style="border-radius: 50%;">
+				<div class="memoverlay"><div class="memname">Prayag<br>Jain</div></div></div></div>
+			<div class="mem col-xs-3 col-md-2"><img class="img-responsive" src="members/aneesh.jpg" style="border-radius: 50%;"></div>
+		</div>
+		<div id="viewAll" class="collapse"><div class="scroller row">
+			<div class="mem col-xs-3 col-md-2"><img class="img-responsive" src="members/devashish.jpg" style="border-radius: 50%;"></div>
+			<div class="mem col-xs-3 col-md-2"><img class="img-responsive" src="members/sandarbh.jpg" style="border-radius: 50%;"></div>
+			<div class="mem col-xs-3 col-md-2"><img class="img-responsive" src="members/ashwini.jpg" style="border-radius: 50%;"></div>
+			<div class="mem col-xs-3 col-md-2"><img class="img-responsive" src="members/adityagupta.jpg" style="border-radius: 50%;"></div>
+			<div class="mem col-xs-3 col-md-2"><img class="img-responsive" src="members/prayag.jpg" style="border-radius: 50%;"></div>
+			<div class="mem col-xs-3 col-md-2"><img class="img-responsive" src="members/aneesh.jpg" style="border-radius: 50%;"></div>		
+		</div>
+		<div class="scroller row">
+			<div class="mem col-xs-3 col-md-2"><img class="img-responsive" src="members/devashish.jpg" style="border-radius: 50%;"></div>
+			<div class="mem col-xs-3 col-md-2"><img class="img-responsive" src="members/sandarbh.jpg" style="border-radius: 50%;"></div>
+			<div class="mem col-xs-3 col-md-2"><img class="img-responsive" src="members/ashwini.jpg" style="border-radius: 50%;"></div>
+			<div class="mem col-xs-3 col-md-2"><img class="img-responsive" src="members/adityagupta.jpg" style="border-radius: 50%;"></div>
+			<div class="mem col-xs-3 col-md-2"><img class="img-responsive" src="members/prayag.jpg" style="border-radius: 50%;"></div>
+			<div class="mem col-xs-3 col-md-2"><img class="img-responsive" src="members/aneesh.jpg" style="border-radius: 50%;"></div>		
+		</div>
+		</div>
+		<div class="text-center"><a href="#viewAll" data-toggle="collapse"><img src="arrowdown.png" style="height: 50px;" onmousedown="change(this)"></a></div>
+		
+	</div>	
+
+	<div class="container-fluid" id="contact" style="background-color: #2c2c2c; color: white; padding-top: 50px; padding-bottom: 20px;">
+		<div class="text-center"><h3>Contact Us<br></h3></div>
+		<div class="row">
+			<div class="col-md-4 col-xs-12 text-center" style="padding-top: 30px;">
+			<img src="socialpng/gmail.png" onmouseover="GonHvr(this)" onmouseout="Gnormal(this)"><h5>Mail us at: cinephiles@iiti.ac.in</h5></div>
+			<div class="col-md-4 col-xs-12 text-center" style="padding-top: 30px;">
+			<a href="https://www.instagram.com/cinephiles_iiti/"><img src="socialpng/insta.png" onmouseover="IonHvr(this)" onmouseout="Inormal(this)"></a>
+			<a href="https://www.facebook.com/tcpmov/"><img src="socialpng/fb.png" onmouseover="FonHvr(this)" onmouseout="Fnormal(this)"></a><h5>Like and Follow us on social network</h5></div>
+			<div class="col-md-4 col-xs-12 text-center" style="padding-top: 30px;">
+				<a href="https://www.youtube.com/channel/UC3fFZVT9E3Rlovhd5ms-wPA"><img src="socialpng/youtube.png" onmouseover="YonHvr(this)" onmouseout="Ynormal(this)"></a><h5>Subscribe our youtube channel</h5>
+			</div>
+		</div>
+	</div>
 </body>
 
+
+<script>
+	count=1;
+function change(x)
+{
+	count++;
+	if(count%2==0)
+	{
+		x.src="arrowup.png";
+	}
+	if(count%2!=0)
+	{
+		x.src="arrowdown.png";
+	}
+}
+function YonHvr(x)
+{
+	x.src="socialpng/youtubecolor.png";
+}
+function Ynormal(x)
+{
+	x.src="socialpng/youtube.png";
+}
+function GonHvr(x)
+{
+	x.src="socialpng/gmailcolor.png";
+}
+function Gnormal(x)
+{
+	x.src="socialpng/gmail.png";
+}
+function IonHvr(x)
+{
+	x.src="socialpng/instacolor.png";
+}
+function Inormal(x)
+{
+	x.src="socialpng/insta.png";
+}
+function FonHvr(x)
+{
+	x.src="socialpng/fbcolor.png";
+}
+function Fnormal(x)
+{
+	x.src="socialpng/fb.png"
+}
+</script>
 
 
 
